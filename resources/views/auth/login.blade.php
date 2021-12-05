@@ -91,28 +91,44 @@
                 <div class="log-reg-area sign">
                     <h2 class="log-title">Login</h2>
                     <p>
-                        Don’t use Winku Yet? <a href="#" title="">Take the tour</a> or <a href="#" title="">Join now</a>
+                        Don’t use Winku Yet? <a href="{{ route('register') }}" title="">Take the tour</a> or <a href="{{ route('register') }}" title="">Join now</a>
                     </p>
                     <form method="post" action="{{ route('login') }}">
                         @csrf
-                        <div class="form-group">
-                            <input type="text" id="input" required="required" />
-                            <label class="control-label" for="input">Username</label><i class="mtrl-select"></i>
+                        <div class="form-group form-floating">
+                            <input type="text" id="input" class="form-control @error('email') is-invalid @enderror"
+                                placeholder="Email" value="{{ old('email') }}" required autocomplete="email" autofocus
+                                name="email" />
+                            <label class="control-label" for="input">Email</label><i class="mtrl-select"></i>
+
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
-                        <div class="form-group">
-                            <input type="password" required="required" />
+                        <div class="form-group form-floating">
+                            <input type="password" class="form-control @error('password') is-invalid @enderror"
+                                placeholder="Password" name="password" autocomplete="current-password" required />
                             <label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
+
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
-                        <div class="checkbox">
+                        <div class="form-check">
                             <label>
-                                <input type="checkbox" checked="checked" /><i class="check-box"></i>Always Remember
+                                <input type="checkbox" name="remember" class="form-check-input" id="remember" {{ old('remember') ? 'checked' : '' }} /><i class="check-box"></i>Remember
                                 Me.
                             </label>
                         </div>
                         <a href="#" title="" class="forgot-pwd">Forgot Password?</a>
                         <div class="submit-btns">
-                            <button class="mtr-btn signin" type="submit"><span>Login</span></button>
-                            <button class="mtr-btn signup" type="button"><a href="{{ route('register') }}">Register</a></button>
+                            <button class="mtr-btn" type="submit"><span>Login</span></button>
+                            <button class="mtr-btn" type="button"><a
+                                    href="{{ route('register') }}">Register</a></button>
                         </div>
                     </form>
                 </div>

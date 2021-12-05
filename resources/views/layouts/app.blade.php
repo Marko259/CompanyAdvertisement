@@ -70,7 +70,7 @@
     </div> --}}
 
     <div class="theme-layout">
-        @if (Route::is('login'))
+        @if (Route::is('login') || Route::is('register'))
             <div class="container-fluid pdng0">
                 @yield('content')
             </div>
