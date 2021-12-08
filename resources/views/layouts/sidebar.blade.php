@@ -26,56 +26,61 @@
     <div class="sidebar-heading">
         Interface
     </div>
+    @can('user')
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item" id="news">
+            <a class="nav-link" href="{{ route('front') }}">
+                <i class="fas fa-fw fa-home"></i>
+                <span>Nyheder</span>
+            </a>
+        </li>
 
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item" id="news">
-        <a class="nav-link" href="{{ route('front') }}">
-            <i class="fas fa-fw fa-home"></i>
-            <span>Nyheder</span>
-        </a>
-    </li>
-
-    <li class="nav-item" id="actions">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-            aria-controls="collapsePages">
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Handlinger</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Handlinger</h6>
-                <a class="collapse-item" href="login.html">Firma indstillinger</a>
-                <a class="collapse-item" href="register.html">Filter indstillinger</a>
+        <li class="nav-item" id="actions">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+                aria-controls="collapsePages">
+                <i class="fas fa-fw fa-wrench"></i>
+                <span>Handlinger</span>
+            </a>
+            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Handlinger</h6>
+                    <a class="collapse-item" href="login.html">Firma indstillinger</a>
+                    <a class="collapse-item" href="register.html">Filter indstillinger</a>
+                </div>
             </div>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+    @endcan
+
+
+    @can('admin')
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Admin indstillinger
         </div>
-    </li>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Admin indstillinger
-    </div>
-
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item" id="admin">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdmin" aria-expanded="true"
-            aria-controls="collapseAdmin">
-            <i class="fas fa-fw fa-cogs"></i>
-            <span>Admin indstillinger</span>
-        </a>
-        <div id="collapseAdmin" class="collapse" aria-labelledby="headingAdmin" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Admin indstillinger:</h6>
-                <a class="collapse-item" href="{{ route('users.index') }}">Bruger indstillinger</a>
-                <a class="collapse-item" href="{{ route('roles.index') }}">Rolle indstillinger</a>
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item" id="admin">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdmin" aria-expanded="true"
+                aria-controls="collapseAdmin">
+                <i class="fas fa-fw fa-cogs"></i>
+                <span>Admin indstillinger</span>
+            </a>
+            <div id="collapseAdmin" class="collapse" aria-labelledby="headingAdmin" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Admin indstillinger:</h6>
+                    <a class="collapse-item" id="user" href="{{ route('users.index') }}">Bruger indstillinger</a>
+                    <a class="collapse-item" href="{{ route('roles.index') }}">Rolle indstillinger</a>
+                </div>
             </div>
-        </div>
-    </li>
+        </li>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+    @endcan
+
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
