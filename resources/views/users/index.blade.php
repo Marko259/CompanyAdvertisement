@@ -55,14 +55,14 @@
                                         @endforeach
                                     </td>
                                     <td>
-                                        <form action="{{ route('users.destroy', $user->id) }}" method="post">
+                                        <a href="{{ route('users.show', $user->id) }}" class="btn btn-info btn-circle"><i
+                                                class="fas fa-eye"></i></a>
+                                        <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary btn-circle">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="{{ route('users.destroy', $user->id) }}" method="post" style="display: inline" onsubmit="return confirm('Er du sikker på at du vil slette denne bruger?')">
+                                            @method('DELETE')
                                             @csrf
-                                            <a href="{{ route('users.show', $user->id) }}"
-                                                class="btn btn-info btn-circle"><i class="fas fa-eye"></i></a>
-                                            <a href="{{ route('users.edit', $user->id) }}"
-                                                class="btn btn-primary btn-circle">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
                                             <button class="btn btn-danger btn-circle" type="submit">
                                                 <i class="fas fa-trash"></i>
                                             </button>

@@ -44,7 +44,7 @@
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Handlinger</h6>
-                    <a class="collapse-item" href="login.html">Firma indstillinger</a>
+                    <a class="collapse-item" href="login.html">Reklame indstillinger</a>
                     <a class="collapse-item" href="register.html">Filter indstillinger</a>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Admin indstillinger:</h6>
                     <a class="collapse-item" id="user" href="{{ route('users.index') }}">Bruger indstillinger</a>
-                    <a class="collapse-item" href="{{ route('roles.index') }}">Rolle indstillinger</a>
+                    <a class="collapse-item" id="role" href="{{ route('roles.index') }}">Rolle indstillinger</a>
                 </div>
             </div>
         </li>
