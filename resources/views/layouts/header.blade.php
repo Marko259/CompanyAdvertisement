@@ -7,15 +7,16 @@
 <title>@yield('title', 'Home') | {{ config('app.name') }}</title>
 
 <!-- Logo -->
-<link rel="icon" href="{{ asset('images/fav.png') }}" type="image/png" sizes="16x16"> 
+<link rel="icon" href="{{ asset('fav.ico') }}" type="image/png" sizes="16x16">
 
 <!-- Fonts -->
-<link rel="dns-prefetch" href="//fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
 
 <!-- Styles -->
-<link rel="stylesheet" href="{{ asset('css/app.css') }}">
-<link rel="stylesheet" href="{{ asset('css/vendor.css') }}">
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-<link rel="stylesheet" href="{{ asset('css/color.css') }}">
-<link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ asset('css/sb-admin-2.css') }}">
+
+
+

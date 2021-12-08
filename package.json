@@ -12,22 +12,20 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
         "@popperjs/core": "^2.11.0",
-        "@staaky/strip": "^1.8.0",
-        "animate.css": "^4.1.1",
         "axios": "^0.24.0",
-        "bootstrap": "^5.1.2",
-        "chosen-js": "^1.8.7",
-        "echarts": "^5.2.2",
+        "bootstrap": "^4.6.0",
+        "bootstrap-table": "^1.19.1",
+        "chart.js": "^2.9.4",
         "jquery": "^3.6.0",
-        "jquery-ui": "^1.13.0",
-        "jquery.mhead": "^1.0.1",
-        "jquery.mmenu": "^7.3.3",
+        "jquery-easing": "^0.0.1",
         "laravel-mix": "^6.0.39",
         "lodash": "^4.17.21",
-        "nprogress": "^0.2.0",
-        "postcss": "^8.4.4",
         "resolve-url-loader": "^4.0.0",
         "sass": "^1.44.0",
-        "sass-loader": "^12.3.0"
+        "sass-loader": "^12.3.0",
+        "startbootstrap-sb-admin-2": "^4.1.4"
+    },
+    "devDependencies": {
+        
     }
 }

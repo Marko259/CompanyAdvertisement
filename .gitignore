@@ -1,14 +1,6 @@
 /node_modules
 /public/hot
 /public/storage
-/public/css/app.css
-/public/css/vendor.css
-/public/fonts/vendor/@fortawesome
-/public/images/vendor/@staaky
-/public/images/vendor/chosen-js
-/public/images/vendor/jquery-ui
-/public/js/app.js
-/public/js/vendor.js
 /storage/*.key
 /vendor
 .env
