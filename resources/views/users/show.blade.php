@@ -44,8 +44,14 @@
                 </div>
                 <div class="card mb-4 py-3 border-left-warning">
                     <div class="card-body">
-                        <strong>Firmaer:</strong>
-                        <code>To be added</code>
+                        <strong>Reklamer:</strong> <br>
+                        @if ($user->advertisements()->get()->isNotEmpty())
+                            @foreach ($user->advertisements()->get() as $adverts)
+                                <p>{{ $adverts->title }},</p>
+                            @endforeach
+                        @else
+                            <p>Ingen reklamer tilknyttet til denne bruger.</p>
+                        @endif
                     </div>
                 </div>
                 <div class="card mb-4 py-3 border-left-secondary">

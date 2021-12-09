@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Rolle indstillinger')
+@section('title', 'Reklame indstillinger')
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap4.min.css') }}">
 @endsection
@@ -9,14 +9,13 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Rolle indstillinger</h1>
-                    <a href="{{ route('roles.create') }}"
+                    <h1 class="h3 mb-0 text-gray-800">Reklame indstillinger</h1>
+                    <a href="{{ route('advert.create') }}"
                         class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                            class="fas fa-plus fa-sm text-white-50"></i> Opret Ny Rolle</a>
+                            class="fas fa-plus fa-sm text-white-50"></i> Opret Ny Reklame</a>
                 </div>
             </div>
         </div>
-
 
         @if ($message = Session::get('success'))
             <div class="alert alert-success">
@@ -33,27 +32,40 @@
                     <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Rolle</th>
+                                <th>Reklame titel</th>
+                                <th>Filter</th>
+                                <th>Ejer</th>
                                 <th width="480px">Handlinger</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Rolle</th>
+                                <th>Reklame titel</th>
+                                <th>Filter</th>
+                                <th>Ejer</th>
                                 <th>Handlinger</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            @foreach ($roles as $role)
+                            @foreach ($adverts as $advert)
                                 <tr>
-                                    <td>{{ $role->name }}</td>
+                                    <td>{{ $advert->title }}</td>
                                     <td>
-                                        <a href="{{ route('roles.show', $role->id) }}" class="btn btn-info btn-circle"><i
-                                                class="fas fa-eye"></i></a>
-                                        <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-primary btn-circle">
+                                        @foreach ($advert->filters()->get() as $filter)
+                                            <span class="badge badge-info">{{ $filter->name }}</span>
+                                        @endforeach
+                                    </td>
+                                    <td>{{ $advert->user()->first()->name }}</td>
+                                    <td>
+                                        <a href="{{ route('advert.show', $advert->id) }}"
+                                            class="btn btn-info btn-circle"><i class="fas fa-eye"></i></a>
+                                        <a href="{{ route('advert.edit', $advert->id) }}"
+                                            class="btn btn-primary btn-circle">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <form action="{{ route('roles.destroy', $role->id) }}" method="post" style="display: inline" onsubmit="return confirm('Er du sikker på at du vil slette denne bruger?')">
+                                        <form action="{{ route('advert.destroy', $advert->id) }}" method="post"
+                                            style="display: inline"
+                                            onsubmit="return confirm('Er du sikker på at du vil slette denne bruger?')">
                                             @method('DELETE')
                                             @csrf
                                             <button class="btn btn-danger btn-circle" type="submit">
@@ -74,11 +86,10 @@
     <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('js/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
-
     <script>
         $(document).ready(function() {
-            $('#admin').addClass('active');
-            $("#role").addClass("active");
+            $("#actions").addClass("active");
+            $('#advert').addClass('active');
         });
     </script>
 @endsection

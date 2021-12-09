@@ -37,6 +37,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::patch('/roles/{role}', [App\Http\Controllers\RoleController::class, 'update'])->name('roles.update');
     Route::delete('/roles/{role}', [App\Http\Controllers\RoleController::class, 'destroy'])->name('roles.destroy');
     Route::get('/roles/{role}', [App\Http\Controllers\RoleController::class, 'show'])->name('roles.show');
+
+    Route::get('/advertisement', [App\Http\Controllers\AdvertisementController::class, 'index'])->name('advert.index');
+    Route::get('/advertisement/create', [App\Http\Controllers\AdvertisementController::class, 'create'])->name('advert.create');
+    Route::post('/advertisement', [App\Http\Controllers\AdvertisementController::class, 'store'])->name('advert.store');
+    Route::get('/advertisement/{advertisement}/edit', [App\Http\Controllers\AdvertisementController::class, 'edit'])->name('advert.edit');
+    Route::patch('/advertisement/{advertisement}', [App\Http\Controllers\AdvertisementController::class, 'update'])->name('advert.update');
+    Route::delete('/advertisement/{advertisement}', [App\Http\Controllers\AdvertisementController::class, 'destroy'])->name('advert.destroy');
+    Route::get('/advertisement/{advertisement}', [App\Http\Controllers\AdvertisementController::class, 'show'])->name('advert.show');
 });
 
 

@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Companies extends Model
+class Advertisement extends Model
 {
     use HasFactory;
+
+    protected $table = 'advertisement';
 
     /**
      * The attributes that are mass assignable.
@@ -16,10 +18,10 @@ class Companies extends Model
      */
     protected $fillable = [
         'id',
-        'name',
+        'title',
         'description',
         'price',
-        'start-date',
+        'start_date',
         'filter',
         'user_id',
     ];
@@ -36,5 +38,9 @@ class Companies extends Model
 
     public function user() {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function filters() {
+        return $this->belongsToMany(Filters::class, 'active_filters', 'advertisement_id', 'filter_id');
     }
 }
