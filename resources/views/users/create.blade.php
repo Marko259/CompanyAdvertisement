@@ -89,7 +89,7 @@
     <script>
         $(document).ready(function () {
             $("#admin").addClass('active');
-            $('#users').addClass('active');
+            $('#user').addClass('active');
         });
     </script>
 @endsection

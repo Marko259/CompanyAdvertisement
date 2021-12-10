@@ -20,6 +20,7 @@ class Advertisement extends Model
         'id',
         'title',
         'description',
+        'contact_info',
         'price',
         'start_date',
         'filter',

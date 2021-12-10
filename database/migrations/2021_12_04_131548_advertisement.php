@@ -17,8 +17,9 @@ class Advertisement extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('description');
-            $table->integer('price');
-            $table->date('start_date');
+            $table->string('contact_info');
+            $table->integer('price')->nullable();
+            $table->date('start_date')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
         });
