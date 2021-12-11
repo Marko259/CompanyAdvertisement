@@ -21,7 +21,7 @@
                     @yield('content')
                 </div>
                 <!-- Footer -->
-                <footer class="@if(Route::is('search')) footer @endif sticky-footer bg-white">
+                <footer class="@if(Route::is('search') || Route::is('front'))footer @endif sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
                             <span>Copyright &copy; {{ config('app.name') }}</span>

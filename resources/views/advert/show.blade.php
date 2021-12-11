@@ -12,12 +12,27 @@
 
 <body class="header">
     <div class="container-fluid">
-        <h1 class="text-capitalize">Hyr {{ $advertisement->title }} nu!</h1>
-        <div class="mt-2"></div>
-        <p>@markdown($advertisement->description)</p>
-        <div class="mt-3"></div>
-        <p>{{ $advertisement->title }} tager kun <strong>{{ $advertisement->price }} DKK</strong> i timen for deres arbejde.</p>
-        <a class="btn-bgstroke text-decoration-none text-white" @if (str_contains($advertisement->contact_info, '@')) href="mailto:{{ $advertisement->contact_info }}" @elseif(is_numeric($advertisement->contact_info)) href="tel:{{ $advertisement->contact_info }}" @endif>Hyr {{ $advertisement->title }} via følgende - {{ $advertisement->contact_info }}</a>
+        <div class="col">
+            <h1 class="text-capitalize">Hyr {{ $advertisement->title }} nu!</h1>
+        </div>
+        <div class="col">
+            <p>@markdown($advertisement->description)</p>
+        </div>
+        <div class="col mt-3">
+            <p>{{ $advertisement->title }} tager kun <strong>{{ $advertisement->price }} DKK</strong> i timen for
+                deres arbejde.</p>
+        </div>
+        <div class="col">
+            <p>{{ $advertisement->title }} specificere sig i
+                @foreach ($advertisement->filters()->get() as $filter)
+                    <span class="font-weight-bold">{{ $filter->name }},</span>
+                @endforeach
+            </p>
+        </div>
+        <div class="col">
+            <a class="btn-bgstroke text-decoration-none text-white" @if (str_contains($advertisement->contact_info, '@')) href="mailto:{{ $advertisement->contact_info }}" @elseif(is_numeric($advertisement->contact_info)) href="tel:{{ $advertisement->contact_info }}" @endif>Hyr
+                {{ $advertisement->title }} via følgende - <span class="font-weight-bold">{{ $advertisement->contact_info }}</span></a>
+        </div>
     </div>
 
     <script src="{{ asset('js/jquery.min.js') }}"></script>
