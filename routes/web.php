@@ -43,8 +43,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/advertisement/{advertisement}/edit', [App\Http\Controllers\AdvertisementController::class, 'edit'])->name('advert.edit');
     Route::patch('/advertisement/{advertisement}', [App\Http\Controllers\AdvertisementController::class, 'update'])->name('advert.update');
     Route::delete('/advertisement/{advertisement}', [App\Http\Controllers\AdvertisementController::class, 'destroy'])->name('advert.destroy');
-    Route::get('/advertisement/{advertisement}', [App\Http\Controllers\AdvertisementController::class, 'show'])->name('advert.show');
 });
 
-
+Route::get('/advertisement/{advertisement}', [App\Http\Controllers\FrontPageController::class, 'show'])->name('advert.show');
 

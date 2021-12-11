@@ -86,7 +86,7 @@
                                             </td>
                                             <td>{{ $advert->user()->first()->name }}</td>
                                             <td>
-                                                <a href="{{ route('advert.show', $advert->id) }}"
+                                                <a target="_blank" href="{{ route('advert.show', $advert->id) }}"
                                                     class="btn btn-info btn-circle"><i class="fas fa-eye"></i></a>
                                                 <a href="{{ route('advert.edit', $advert->id) }}"
                                                     class="btn btn-primary btn-circle">

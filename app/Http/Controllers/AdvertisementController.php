@@ -11,18 +11,13 @@ class AdvertisementController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('permission:user');
+        $this->middleware('permission:user', ['only' => ['index', 'create', 'store', 'edit', 'update', 'destroy']]);
     }
 
     public function index()
     {
         $adverts = Advertisement::all();
         return view('advert.index', compact('adverts'));
-    }
-
-    public function show(Advertisement $advertisement)
-    {
-        return view('advert.show', compact('advertisement'));
     }
 
     public function create()
