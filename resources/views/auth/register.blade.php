@@ -113,7 +113,7 @@
                             <div class="form-group">
                                 <input type="email"
                                     class="form-control form-control-user @error('email') is-invalid @enderror"
-                                    id="exampleInputEmail" placeholder="Email Address" name="email"
+                                    id="exampleInputEmail" placeholder="Email adresse" name="email"
                                     value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
@@ -141,15 +141,12 @@
                                 </div>
                             </div>
                             <button class="btn btn-primary btn-user btn-block" type="submit">
-                                Register Account
+                                Registrer Konto
                             </button>
                         </form>
                         <hr>
                         <div class="text-center">
-                            <a class="small" href="#">Forgot Password?</a>
-                        </div>
-                        <div class="text-center">
-                            <a class="small" href="{{ route('login') }}">Already have an account? Login!</a>
+                            <a class="small" href="{{ route('login') }}">Har du allerede en konto? Login her!</a>
                         </div>
                     </div>
                 </div>

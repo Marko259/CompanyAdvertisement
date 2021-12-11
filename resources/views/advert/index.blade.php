@@ -48,32 +48,63 @@
                         </tfoot>
                         <tbody>
                             @foreach ($adverts as $advert)
-                                <tr>
-                                    <td>{{ $advert->title }}</td>
-                                    <td>
-                                        @foreach ($advert->filters()->get() as $filter)
-                                            <span class="badge badge-info">{{ $filter->name }}</span>
-                                        @endforeach
-                                    </td>
-                                    <td>{{ $advert->user()->first()->name }}</td>
-                                    <td>
-                                        <a href="{{ route('advert.show', $advert->id) }}"
-                                            class="btn btn-info btn-circle"><i class="fas fa-eye"></i></a>
-                                        <a href="{{ route('advert.edit', $advert->id) }}"
-                                            class="btn btn-primary btn-circle">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                        <form action="{{ route('advert.destroy', $advert->id) }}" method="post"
-                                            style="display: inline"
-                                            onsubmit="return confirm('Er du sikker på at du vil slette denne bruger?')">
-                                            @method('DELETE')
-                                            @csrf
-                                            <button class="btn btn-danger btn-circle" type="submit">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
+                                @if ($advert->user()->first()->id == Auth::user()->id)
+                                    <tr>
+                                        <td>{{ $advert->title }}</td>
+                                        <td>
+                                            @foreach ($advert->filters()->get() as $filter)
+                                                <span class="badge badge-info">{{ $filter->name }}</span>
+                                            @endforeach
+                                        </td>
+                                        <td>{{ $advert->user()->first()->name }}</td>
+                                        <td>
+                                            <a href="{{ route('advert.show', $advert->id) }}"
+                                                class="btn btn-info btn-circle"><i class="fas fa-eye"></i></a>
+                                            <a href="{{ route('advert.edit', $advert->id) }}"
+                                                class="btn btn-primary btn-circle">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <form action="{{ route('advert.destroy', $advert->id) }}" method="post"
+                                                style="display: inline"
+                                                onsubmit="return confirm('Er du sikker på at du vil slette denne bruger?')">
+                                                @method('DELETE')
+                                                @csrf
+                                                <button class="btn btn-danger btn-circle" type="submit">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @else
+                                    @can('admin')
+                                        <tr>
+                                            <td>{{ $advert->title }}</td>
+                                            <td>
+                                                @foreach ($advert->filters()->get() as $filter)
+                                                    <span class="badge badge-info">{{ $filter->name }}</span>
+                                                @endforeach
+                                            </td>
+                                            <td>{{ $advert->user()->first()->name }}</td>
+                                            <td>
+                                                <a href="{{ route('advert.show', $advert->id) }}"
+                                                    class="btn btn-info btn-circle"><i class="fas fa-eye"></i></a>
+                                                <a href="{{ route('advert.edit', $advert->id) }}"
+                                                    class="btn btn-primary btn-circle">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <form action="{{ route('advert.destroy', $advert->id) }}" method="post"
+                                                    style="display: inline"
+                                                    onsubmit="return confirm('Er du sikker på at du vil slette denne bruger?')">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                    <button class="btn btn-danger btn-circle" type="submit">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endcan
+                                @endif
                             @endforeach
                         </tbody>
                     </table>

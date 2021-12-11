@@ -2,7 +2,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('dashboard') }}">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
@@ -30,7 +30,7 @@
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item" id="news">
             <a class="nav-link" href="{{ route('front') }}">
-                <i class="fas fa-fw fa-home"></i>
+                <i class="fas fa-fw fa-bullhorn"></i>
                 <span>Nyheder</span>
             </a>
         </li>
@@ -45,7 +45,6 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Handlinger</h6>
                     <a class="collapse-item" id="advert" href="{{ route('advert.index')}}">Reklame indstillinger</a>
-                    <a class="collapse-item" href="register.html">Filter indstillinger</a>
                 </div>
             </div>
         </li>

@@ -91,7 +91,7 @@
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Velkommen!</h1>
                                 </div>
                                 <form class="user" method="POST" action="{{ route('login') }}">
                                     @csrf
@@ -99,7 +99,7 @@
                                         <input type="email"
                                             class="form-control form-control-user @error('email') is-invalid @enderror"
                                             id="exampleInputEmail" aria-describedby="emailHelp" name="email"
-                                            placeholder="Enter Email Address..." value="{{ old('email') }}" required
+                                            placeholder="Indtast Email adresse..." value="{{ old('email') }}" required
                                             autocomplete="email" autofocus>
 
                                         @error('email')
@@ -124,8 +124,7 @@
                                         <div class="custom-control custom-checkbox small">
                                             <input type="checkbox" class="custom-control-input" id="customCheck"
                                                 name="remember" {{ old('remember') ? 'checked' : '' }}>
-                                            <label class="custom-control-label" for="customCheck">Remember
-                                                Me</label>
+                                            <label class="custom-control-label" for="customCheck">Husk mig</label>
                                         </div>
                                     </div>
                                     <button class="btn btn-primary btn-user btn-block" type="submit">
@@ -134,10 +133,7 @@
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="small" href="#">Forgot Password?</a>
-                                </div>
-                                <div class="text-center">
-                                    <a class="small" href="{{ route('register') }}">Create an Account!</a>
+                                    <a class="small" href="{{ route('register') }}">Opret en konto!</a>
                                 </div>
                             </div>
                         </div>
