@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\FrontPageController::class, 'index'])->name('front');
+Route::get('/search', [App\Http\Controllers\FrontPageController::class, 'search'])->name('search');
 
 Auth::routes();
 

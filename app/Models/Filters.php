@@ -32,6 +32,6 @@ class Filters extends Model
 
     public function adverts()
     {
-        return $this->hasMany(Advertisement::class, 'active_filters');
+        return $this->belongsToMany(Advertisement::class, 'active_filters', 'filter_id', 'advertisement_id');
     }
 }

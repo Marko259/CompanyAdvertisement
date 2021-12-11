@@ -1,7 +1,7 @@
 <!-- Topbar -->
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-    @if (Route::is('front'))
+    @if (Route::is('front') || Route::is('search'))
         <!-- Topbar - Brand -->
         <a class="d-flex align-items-center justify-content-center text-decoration-none" href="{{ route('front') }}">
             <div class="rotate-n-15">
@@ -22,6 +22,19 @@
                 </div>
             </div>
         @endauth
+
+        <!-- Topbar Search -->
+        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="get" action="{{ route('search') }}">
+            <div class="input-group">
+                <input type="text" class="form-control bg-light border-0 small" name="search" placeholder="Søg"
+                    aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-search fa-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
     @else
         <!-- Sidebar Toggle (Topbar) -->
         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -32,7 +45,7 @@
 
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
-        @if (!Route::is('front'))
+        @if (Route::is('front') || Route::is('search'))
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
                 <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"

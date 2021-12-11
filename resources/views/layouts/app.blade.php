@@ -12,14 +12,16 @@
         </div>
     @else
         <div id="wrapper">
-            @include('layouts.sidebar')
+            @if (!Route::is('front') && !Route::is('search'))
+                @include('layouts.sidebar')
+            @endif
             <div id="content-wrapper" class="d-flex flex-column">
                 <div id="content">
                     @include('layouts.topbar')
                     @yield('content')
                 </div>
                 <!-- Footer -->
-                <footer class="sticky-footer bg-white">
+                <footer class="@if(Route::is('search')) footer @endif sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
                             <span>Copyright &copy; {{ config('app.name') }}</span>
