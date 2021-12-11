@@ -74,7 +74,7 @@
                                 <a href="{{ route('advert.show', $advert->id) }}"
                                     class="btn btn-primary btn-icon-split btn-sm" target="_blank"><span
                                         class="icon text-white-50"><i class="fas fa-eye"></i></span><span
-                                        class="text">Se reklamen her</span></a>
+                                        class="text">Læs mere her</span></a>
                             </div>
                         </div>
                     </div>
@@ -137,7 +137,4 @@
             </div>
         @endif
     </div>
-@endsection
-@section('js')
-
 @endsection

@@ -29,7 +29,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered table-hover" id="AdvertdataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>Reklame titel</th>
@@ -121,6 +121,21 @@
         $(document).ready(function() {
             $("#actions").addClass("active");
             $('#advert').addClass('active');
+
+            $('#AdvertdataTable').DataTable({
+                "language": {
+                    "lengthMenu": "Vis _MENU_ reklamer pr. side",
+                    "zeroRecords": "Der blev ikke fundet nogle reklamer",
+                    "info": "Viser _PAGE_ ud af _PAGES_ side(r)",
+                    "infoEmpty": "Der er ikke nogle reklamer tilgængelig",
+                    "infoFiltered": "(filtreret fra _MAX_ total reklamer)",
+                    "search": "Søg",
+                    "paginate": {
+                        "next": "Næste",
+                        "previous": "Forrige"
+                    }
+                }
+            });
         });
     </script>
 @endsection

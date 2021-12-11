@@ -30,7 +30,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered table-hover" id="RoledataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>Rolle</th>
@@ -53,7 +53,9 @@
                                         <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-primary btn-circle">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <form action="{{ route('roles.destroy', $role->id) }}" method="post" style="display: inline" onsubmit="return confirm('Er du sikker på at du vil slette denne bruger?')">
+                                        <form action="{{ route('roles.destroy', $role->id) }}" method="post"
+                                            style="display: inline"
+                                            onsubmit="return confirm('Er du sikker på at du vil slette denne bruger?')">
                                             @method('DELETE')
                                             @csrf
                                             <button class="btn btn-danger btn-circle" type="submit">
@@ -79,6 +81,21 @@
         $(document).ready(function() {
             $('#admin').addClass('active');
             $("#role").addClass("active");
+
+            $('#RoledataTable').DataTable({
+                "language": {
+                    "lengthMenu": "Vis _MENU_ roller pr. side",
+                    "zeroRecords": "Der blev ikke fundet nogle roller",
+                    "info": "Viser _PAGE_ ud af _PAGES_ side(r)",
+                    "infoEmpty": "Der er ikke nogle roller tilgængelig",
+                    "infoFiltered": "(filtreret fra _MAX_ total roller)",
+                    "search": "Søg",
+                    "paginate": {
+                        "next": "Næste",
+                        "previous": "Forrige"
+                    }
+                }
+            });
         });
     </script>
 @endsection
