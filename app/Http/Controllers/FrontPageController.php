@@ -17,8 +17,8 @@ class FrontPageController extends Controller
     public function search(Request $request)
     {
         $search = $request->input('search');
-        $advertisements = Advertisement::where('title', 'like', '%' . $search . '%')->orWhere('description', 'like', '%' . $search . '%')->get();
-        $filters = Filters::where('name', 'like', '%' . $search . '%')->get();
+        $advertisements = Advertisement::where('title', 'like', '%' . $search . '%')->orWhere('description', 'like', '%' . $search . '%')->orderBy('title', 'ASC')->get();
+        $filters = Filters::where('name', 'like', '%' . $search . '%')->orderBy('name', 'ASC')->get();
         return view('search', compact('advertisements', 'filters'));
     }
 

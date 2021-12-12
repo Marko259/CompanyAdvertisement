@@ -11,7 +11,7 @@
 
         <div class="mb-5"></div>
         @if ($advertisements->isNotEmpty())
-            @foreach ($advertisements as $advert)
+            @foreach ($advertisements->shuffle() as $advert)
                 <div class="row justify-content-center">
                     <!-- Area Chart -->
                     <div class="col-xl-8 col-lg-7">
