@@ -9,6 +9,10 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            @can('user')
+                <a href="{{ route('advert.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                        class="fas fa-plus fa-sm text-white-50"></i> Opret Ny Reklame</a>
+            @endcan
         </div>
 
         <!-- Content Row -->
@@ -45,7 +49,8 @@
                                     @php
                                         $filters = [];
                                     @endphp
-                                    @foreach (Auth::user()->advertisements()->get() as $advert)
+                                    @foreach (Auth::user()->advertisements()->get()
+        as $advert)
                                         @php
                                             array_push($filters, $advert->filters()->count());
                                         @endphp
@@ -70,7 +75,8 @@
 
 
         <div class="row">
-            @foreach (Auth::user()->advertisements()->get() as $advert)
+            @foreach (Auth::user()->advertisements()->get()
+        as $advert)
                 <div class="col-lg-4 mb-4 d-flex align-self-stretch">
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
