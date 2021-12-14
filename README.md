@@ -29,7 +29,7 @@ For at benytte sig af dette system skal miljøet som projektet skal køre på op
 - **Tokenizer PHP Extension**
 - **XML PHP Extension**
 
-Derefter skal man køre følgende kommandoer i projektmappen via en commandprompt.
+Derefter skal man køre følgende kommandoer i projektmappen via en kommandoprompt.
 
 - `php -r "file_exists('.env') || copy('.env.example', '.env');"`
 - `composer install -q --no-dev --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist`
