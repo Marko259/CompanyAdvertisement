@@ -42,4 +42,16 @@ Derefter skal man køre følgende kommandoer i projektmappen via en kommandoprom
 
 Dernæst udfyld de nødvendige informationer i filen `.env` i projektmappen.
 
-Til slut kan man køre kommandoen `php artisan serve` for at få siden vist. Ellers kan en demo af projektet findes via dette [link](http://vps02.r159.dk/CompanyAdvertisement/public/)
+Til slut kan man køre kommandoen `php artisan serve` for at få siden vist. 
+
+En demo af projektet findes via dette [link](http://vps02.r159.dk/CompanyAdvertisement/public/)
+
+### Login informationer:
+
+#### Normal Bruger:
+Email: `bruger@bruger.dk`
+Password: `123456`
+
+#### Administrator:
+Email: `admin@admin.dk`
+Password: `123456`
