@@ -47,6 +47,7 @@ Efter opsætning skal man oprette tilladelser og en admin bruger. Dette gør man
 - `php artisan db:seed --class=CreateSuperAdminUser`
 
 Efter udførelsen af disse kommandoer kan man logge ind med følgende informationer.
+
 Email: `admin@admin.dk`
 Password: `123456`
 
