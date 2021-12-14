@@ -1,4 +1,4 @@
-<p align="center"><img src="http://vps02.r159.dk/CompanyAdvertisement/public/images/front.png" width="400"></p>
+<p align="center"><a href="http://vps02.r159.dk/CompanyAdvertisement/public" target="_blank"><img src="http://vps02.r159.dk/CompanyAdvertisement/public/images/front.png" width="400"></a></p>
 
 ## Om dette projekt
 
@@ -42,4 +42,4 @@ Derefter skal man køre følgende kommandoer i projektmappen via en commandpromp
 
 Dernæst udfyld de nødvendige informationer i filen `.env` i projektmappen.
 
-Til slut kan man køre kommandoen `php artisan serve` for at få siden vist.
+Til slut kan man køre kommandoen `php artisan serve` for at få siden vist. Ellers kan en demo af projektet findes via dette [link](http://vps02.r159.dk/CompanyAdvertisement/public/)
