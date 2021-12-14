@@ -53,7 +53,7 @@ Email: `admin@admin.dk`
 
 Password: `123456`
 
-Til slut kan man køre kommandoen `php artisan serve` for at få siden vist.
+Til slut kan man køre kommandoen `php artisan serve`. For at få siden vist skal du tilgå `localhost:8000`.
 
 En demo af projektet findes via dette [link](http://vps02.r159.dk/CompanyAdvertisement/public/)
 
