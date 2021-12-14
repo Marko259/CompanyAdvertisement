@@ -60,9 +60,9 @@ En demo af projektet findes via dette [link](http://vps02.r159.dk/CompanyAdverti
 ### Login informationer:
 
 #### Normal Bruger:
-Email: `bruger@bruger.dk`
+Email: `bruger@bruger.dk` 
 Password: `123456`
 
 #### Administrator:
-Email: `admin@admin.dk`
+Email: `admin@admin.dk` 
 Password: `123456`
