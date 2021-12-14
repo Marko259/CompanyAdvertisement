@@ -49,6 +49,7 @@ Efter opsætning skal man oprette tilladelser og en admin bruger. Dette gør man
 Efter udførelsen af disse kommandoer kan man logge ind med følgende informationer.
 
 Email: `admin@admin.dk`
+
 Password: `123456`
 
 Til slut kan man køre kommandoen `php artisan serve` for at få siden vist.
