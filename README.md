@@ -42,7 +42,15 @@ Derefter skal man køre følgende kommandoer i projektmappen via en kommandoprom
 
 Dernæst udfyld de nødvendige informationer i filen `.env` i projektmappen.
 
-Til slut kan man køre kommandoen `php artisan serve` for at få siden vist. 
+Efter opsætning skal man oprette tilladelser og en admin bruger. Dette gør man via følgende kommandoer.
+- `php artisan db:seed --class=PermissionTableSeeder`
+- `php artisan db:seed --class=CreateSuperAdminUser`
+
+Efter udførelsen af disse kommandoer kan man logge ind med følgende informationer.
+Email: `admin@admin.dk`
+Password: `123456`
+
+Til slut kan man køre kommandoen `php artisan serve` for at få siden vist.
 
 En demo af projektet findes via dette [link](http://vps02.r159.dk/CompanyAdvertisement/public/)
 
