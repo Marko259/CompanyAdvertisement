@@ -3,6 +3,7 @@
 ## Om dette projekt
 
 Dette er et SOP projekt lavet af Markus Smith Nielsen. Projektet er udviklet med [Laravel v8.65](https://laravel.com/). Systemet har til formål at hjælpe nyopstartet virksomheder med at nå deres målgruppe.
+Projektet er tager udgangspunkt i Start Bootstraps tema [SB-Admin 2](https://startbootstrap.com/theme/sb-admin-2).
 
 Systemets funktioner består af følgende funktioner:
 
